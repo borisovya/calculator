@@ -1,0 +1,24 @@
+.calk {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    background-color: lightblue;
+    padding: 20px;
+    border: 2px solid gray;
+}
+
+.calk .buttons-block button {
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+}
+
+.calk .inputs-block .blocks {
+    display: inline-block;
+    padding: 20px;
+}
+
+.calk .inputs-block .blocks label {
+    display: block;
+}
+
