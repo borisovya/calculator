@@ -3,57 +3,50 @@ var minus = document.getElementById('minus');
 var devide = document.getElementById('devide');
 var multiply = document.getElementById('multiply');
 
+var i1 = document.getElementById('input1');
+var i2 = document.getElementById('input2');
+
+function getNumber1() {
+    return Number(i1.value);
+}
+
+function getNumber2() {
+    return Number(i2.value);
+}
+
+function makeOperation (operationCode) {
+    if (operationCode === '+') {
+        var result = getNumber1() + getNumber2();
+    }
+    else if (operationCode === '-') {
+        var result = getNumber1() - getNumber2();
+    }
+
+    else if (operationCode === '*') {
+        var result = getNumber1() * getNumber2();
+    }
+
+    else if (operationCode === '/') {
+        var result = getNumber1() / getNumber2();
+    }
+
+    window.alert(result);
+}
 
 function onButtonPlusClick() {
-    console.log('onButtonPlusClick');
-    var i1 = document.getElementById('1');
-    var i2 = document.getElementById('2');
-
-    var number1 = Number(i1.value);
-    var number2 = Number(i2.value);
-
-    var result = number1 + number2;
-    window.alert(result);
-
+    makeOperation('+');
 }
 
 function onButtonMinusClick() {
-    console.log('onButtonMinusClick');
-    console.log('onButtonPlusClick');
-    var i1 = document.getElementById('1');
-    var i2 = document.getElementById('2');
-
-    var number1 = Number(i1.value);
-    var number2 = Number(i2.value);
-
-    var result = number1 - number2;
-    window.alert(result);
+    makeOperation('-');
 }
 
 function onButtonDevideClick() {
-    console.log('onButtonDevideClick');
-    console.log('onButtonPlusClick');
-    var i1 = document.getElementById('1');
-    var i2 = document.getElementById('2');
-
-    var number1 = Number(i1.value);
-    var number2 = Number(i2.value);
-
-    var result = number1 / number2;
-    window.alert(result);
+    makeOperation('/');
 }
 
 function onButtonMultiplyClick() {
-    console.log('onButtonMultiplyClick');
-    console.log('onButtonPlusClick');
-    var i1 = document.getElementById('1');
-    var i2 = document.getElementById('2');
-
-    var number1 = Number(i1.value);
-    var number2 = Number(i2.value);
-
-    var result = number1 * number2;
-    window.alert(result);
+    makeOperation('*');
 }
 
 plus.addEventListener('click', onButtonPlusClick);
