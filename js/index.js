@@ -6,50 +6,45 @@ var multiply = document.getElementById('multiply');
 var i1 = document.getElementById('input1');
 var i2 = document.getElementById('input2');
 
-function getNumber1() {
-    return Number(i1.value);
-}
 
-function getNumber2() {
-    return Number(i2.value);
-}
 
-function makeOperation (operationCode) {
+function makeOperation(operationCode) {
+
+    var number1 = Number(i1.value);
+    var number2 = Number(i2.value);
+
     if (operationCode === '+') {
-        var result = getNumber1() + getNumber2();
+        var result = number1 + number2;
     }
     else if (operationCode === '-') {
-        var result = getNumber1() - getNumber2();
+        var result = number1 - number2;
     }
 
     else if (operationCode === '*') {
-        var result = getNumber1() * getNumber2();
+        var result = number1 * number2;
     }
 
-    else if (operationCode === '/') {
-        var result = getNumber1() / getNumber2();
+    else if (operationCode === ':') {
+        var result = number1 / number2;
     }
 
     window.alert(result);
 }
 
-function onButtonPlusClick() {
-    makeOperation('+');
+
+function onOperationButtonClick(eventObject) {
+    var clickedElement = eventObject.currentTarget;
+    var operation = clickedElement.innerHTML;
+    makeOperation(operation);
 }
 
-function onButtonMinusClick() {
-    makeOperation('-');
+var arrayOfButtons = [plus, minus, devide, multiply];
+
+
+for (var i = 0; i < arrayOfButtons.length; i++) {
+    var button = arrayOfButtons[i];
+    button.addEventListener('click', onOperationButtonClick);
 }
 
-function onButtonDevideClick() {
-    makeOperation('/');
-}
-
-function onButtonMultiplyClick() {
-    makeOperation('*');
-}
-
-plus.addEventListener('click', onButtonPlusClick);
-minus.addEventListener('click', onButtonMinusClick);
-devide.addEventListener('click', onButtonDevideClick);
-multiply.addEventListener('click', onButtonMultiplyClick);
+var arrayOfNumbers = [13, 24, 45, 99];
+var arrayOfStrings = ['Alex', 'Susan', 'Hector', 'David'];
