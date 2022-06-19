@@ -1,7 +1,11 @@
-var plus = document.getElementById('plus');
-var minus = document.getElementById('minus');
-var devide = document.getElementById('devide');
-var multiply = document.getElementById('multiply');
+//var plus = document.getElementById('plus');
+//var minus = document.getElementById('minus');
+//var devide = document.getElementById('devide');
+//var multiply = document.getElementById('multiply');
+
+//var arrayOfButtons = [plus, minus, devide, multiply];
+
+var operationButtons = document.getElementsByClassName('operation-button')
 
 var i1 = document.getElementById('input1');
 var i2 = document.getElementById('input2');
@@ -38,13 +42,9 @@ function onOperationButtonClick(eventObject) {
     makeOperation(operation);
 }
 
-var arrayOfButtons = [plus, minus, devide, multiply];
 
 
 for (var i = 0; i < arrayOfButtons.length; i++) {
     var button = arrayOfButtons[i];
     button.addEventListener('click', onOperationButtonClick);
 }
-
-var arrayOfNumbers = [13, 24, 45, 99];
-var arrayOfStrings = ['Alex', 'Susan', 'Hector', 'David'];
